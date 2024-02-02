@@ -1,0 +1,191 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            #header
+            {
+                background-color: #393646;
+                min-height:100px;
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <div id="header">
+            <div class="col-lg-2">
+                <img src="../static/images/logo.png" class="col-lg-12" style="height:100px;" />
+            </div>
+            <div class="col-lg-4">
+                
+            </div>
+            <div class="col-lg-6" style="font-size:20px;font-weight:bolder;color:white;margin-top:25px;padding-left:250px;">
+                <a href="dashboard">Home</a> | 
+                <a href="dataloader">Dataloader</a> | 
+                <a href="planning">Planning</a> | 
+                <a href="predict">Predict</a> | 
+                <a href="login">Logout</a> 
+            </div>
+        </div>
+
+        <div id="body" style="height:750px;">
+            <div class="col-lg-6" style="margin-top: 50px;">                
+                <img src="../static/images/heart.jpg" class="col-lg-12" style="height:600px;" />
+            </div>
+
+            <div class="col-lg-6" style="color:darkred; ">
+                <h1 class="text-center" style="font-weight: 600;">Predict</h1>
+
+                <div class="form-group row">
+                    <label for="age" style="font-size:18px; " class="col-sm-6 col-form-label">Age:</label>
+                    <div class="col-sm-6">
+                      <input type="number" class="form-control-md" id="age" name="age" style="width: 16em;">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="sex" style="font-size:18px; " class="col-sm-6 col-form-label">Gender:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="sex" name="sex">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="1">1 - MALE</option>
+                            <option value="0">0 - FEMALE</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="cp" style="font-size:18px; " class="col-sm-6 col-form-label">Chest Pain:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="cp" name="cp">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="0">0 - asymptomatic</option>
+                            <option value="1">1 - typical angina</option>
+                            <option value="2">2 - atypical angina</option>
+                            <option value="3">3 - non-anginal pain</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="trtbps" style="font-size:18px; " class="col-sm-6 col-form-label">Resting blood pressure:</label>
+                    <div class="col-sm-6">
+                      <input type="number" class="form-control-md" id="trtbps" name="trtbps" style="width: 16em;">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="chol" style="font-size:18px; " class="col-sm-6 col-form-label">Cholestoral:</label>
+                    <div class="col-sm-6">
+                      <input type="number" class="form-control-md" id="chol" name="chol" style="width: 16em;">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fbs" style="font-size:18px; " class="col-sm-6 col-form-label">Fasting blood sugar > 120 mg/dl:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="fbs" name="fbs">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="1">1 - True</option>
+                            <option value="0">0 - False</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="restecg" style="font-size:18px; " class="col-sm-6 col-form-label">Resting electrocardiographic results:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="restecg" name="restecg">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="0">0 - hypertrophy</option>
+                            <option value="1">1 - normal</option>
+                            <option value="2">2 - ST-T wave abnormality</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="thalachh" style="font-size:18px; " class="col-sm-6 col-form-label">Maximum heart rate achieved:</label>
+                    <div class="col-sm-6">
+                      <input type="number" min="40" class="form-control-md" id="thalachh" name="thalachh" style="width: 16em;">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exng" style="font-size:18px; " class="col-sm-6 col-form-label">Exercise induced angina:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="exng" name="exng">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="1">1 - Yes</option>
+                            <option value="0">0 - No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="oldpeak" style="font-size:18px; " class="col-sm-6 col-form-label">Oldpeak:</label>
+                    <div class="col-sm-6">
+                      <input type="number" step="0.01" class="form-control-md" id="oldpeak" name="oldpeak" style="width: 16em;">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="slp" style="font-size:18px; " class="col-sm-6 col-form-label">Slope of the peak exercise:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="slp" name="slp">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="0">0 - downsloping</option>
+                            <option value="1">1 - flat</option>
+                            <option value="2">2 - upsloping</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="caa" style="font-size:18px; " class="col-sm-6 col-form-label">Number of major vessels:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="caa" name="caa">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="thall" style="font-size:18px; " class="col-sm-6 col-form-label">thall:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="thall" name="thall">
+                            <option disabled selected hidden value="">Choose..</option>
+                            <option value="1">1 - fixed defect</option>
+                            <option value="2">2 - normal</option>
+                            <option value="3">3 - reversable defect</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <input type="submit" class="btn btn-primary col-lg-5" id="btn_predictdata" name="btn_predictdata" value="Predict" style="margin-right:30px;"/>
+                    <input type="reset" class="btn btn-danger col-lg-5" id="btn_reset_predict" name="btn_reset_predict" />
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" style="background-color:#393646;height:50px;text-align: center;color: white;font-weight:bolder;font-size:15px;padding-top:1%;" >
+            All Rights Reserved to DS Workshop
+        </div>
+
+    </body>
+    <script src="../static/js/api.js"></script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            #header
+            {
+                background-color: #393646;
+                min-height:100px;
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <div id="header">
+            <div class="col-lg-2">
+                <img src="../static/images/logo.png" class="col-lg-12" style="height:100px;" />
+            </div>
+            <div class="col-lg-4">
+                
+            </div>
+            <div class="col-lg-6" style="font-size:20px;font-weight:bolder;color:white;margin-top:25px;padding-left:250px;">
+                <a href="dashboard">Home</a> | 
+                <a href="dataloader">Dataloader</a> | 
+                <a href="planning">Planning</a> | 
+                <a href="predict">Predict</a> | 
+                <a href="login">Logout</a> 
+            </div>
+        </div>
+
+        <div id="body" style="height:550px;">
+           <h1>Data Loading Page</h1>
+           Select Your CSV File :
+           <form id="dataloadform" enctype="multipart/form-data">
+           <input type="file" id="csvfile" name="csvfile" accept=".csv" class="form-control" />
+          </form>
+           <div class="col-lg-6" style="padding-top:20px;">
+              <input type="button" id="btn_loaddata" name="btn_loaddata" value="Load Dataset" class="btn btn-primary form-control" />
+           </div>
+           <div class="col-lg-6" style="padding-top:20px;">
+            <input type="button" id="btn_cleardata" name="btn_cleardata" value="Clear Dataset" class="btn btn-danger form-control" />
+         </div>
+        </div>
+
+        <div id="footer" style="background-color:#393646;height:50px;text-align: center;color: white;font-weight:bolder;font-size:15px;padding-top:1%;" >
+            All Rights Reserved to DS Workshop
+        </div>
+
+    </body>
+    <script src="../static/js/api.js"></script>
+</html>

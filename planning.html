@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    #header {
+      background-color: #393646;
+      min-height: 100px;
+    }
+
+    .table-responsive {
+      max-height: 500px;
+    }
+
+    th {
+      position: sticky;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <div class="col-lg-2">
+      <img src="../static/images/logo.png" class="col-lg-12" style="height:100px;" />
+    </div>
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-6" style="font-size:20px;font-weight:bolder;color:white;margin-top:25px;padding-left:250px;">
+      <a href="dashboard">Home</a> |
+      <a href="dataloader">Dataloader</a> |
+      <a href="planning">Planning</a> |
+      <a href="predict">Predict</a> |
+      <a href="login">Logout</a>
+    </div>
+  </div>
+
+  <div id="body" style="height:590px;color: darkred;">
+    <h1 class="text-center" style="font-weight: 600;">Planning</h1>
+    <div class="table-responsive" style="margin: 10px 50px;">
+      <table class="table table-bordered table-striped table-hover">
+        <thead style="background-color: black; color: white;">
+          <tr>
+            <th>age</th>
+            <th>sex</th>
+            <th>cp</th>
+            <th>trtbps</th>
+            <th>chol</th>
+            <th>fbs</th>
+            <th>restecg</th>
+            <th>thalachh</th>
+            <th>exng</th>
+            <th>oldpeak</th>
+            <th>slp</th>
+            <th>caa</th>
+            <th>thall</th>
+            <th>output</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in tbdata %}
+          <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>{{row[5]}}</td>
+            <td>{{row[6]}}</td>
+            <td>{{row[7]}}</td>
+            <td>{{row[8]}}</td>
+            <td>{{row[9]}}</td>
+            <td>{{row[10]}}</td>
+            <td>{{row[11]}}</td>
+            <td>{{row[12]}}</td>
+            <td>{{row[13]}}</td>
+            <td>
+              <button type="button" class="btn btn-danger" style="width: 100%;" onclick="deleteRow({{row[0]}},{{row[1]}},{{row[2]}},{{row[3]}},{{row[4]}},{{row[5]}},{{row[6]}},{{row[7]}},{{row[8]}},{{row[9]}},{{row[10]}},{{row[11]}},{{row[12]}},{{row[13]}})">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z">
+                  </path>
+                  <path
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z">
+                  </path>
+                </svg>
+              </button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="footer"
+    style="background-color:#393646;height:50px;text-align: center;color: white;font-weight:bolder;font-size:15px;padding-top:1%;">
+    All Rights Reserved to DS Workshop
+  </div>
+
+</body>
+<script src="../static/js/api.js"></script>
+
+</html>
